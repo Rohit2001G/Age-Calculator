@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Age Calculate in Js</title>
+    <style>
+        body{
+            background-color: rgba(155, 15, 34, 0.329);
+        }
+        h1{
+            position: relative;
+            top: 80px;
+            left: 620px;
+            color: blue;
+        }
+        .container {
+            height: 300px;
+            width: 550px;
+            border: 2px solid green;
+            margin: 100px 0 0 450px;
+            border-radius: 10px;
+            background-color: rgba(0, 0, 0, 0.384);
+        }
+        .container:hover{
+            box-shadow: 0px 0px 20px rgb(113, 252, 0);
+
+        }
+
+        input {
+            height: 70px;
+            width: 150px;
+            margin: 25px 0 0 15px;
+            font-size: x-large;
+            border-radius: 10px;
+            background-color: rgba(0, 0, 0, 0.719);
+            color: wheat;
+            text-align: center;
+        }
+        input:focus{
+            box-shadow: 0px 0px 20px rgb(113, 252, 0)inset;
+
+        }
+
+        .boxs {
+            font-size: xx-large;
+            height: 50px;
+            width: 150px;
+            display: inline-block;
+            margin: 15px 0 0 15px;
+            font-size: xx-large;
+            border-radius: 10px;
+            text-align: center;
+            color: white;
+        }
+
+
+        button {
+            height: 50px;
+            width: 120px;
+            border-radius: 10px;
+            font-size: larger;
+            background-color: rgba(0, 0, 0, 0.719);
+            color: white;
+        }
+        button:hover{
+            box-shadow: 0px 0px 10px aqua;
+            transform: scale(1.1);
+        }
+
+        #sub {
+            margin: 20px 0 0 120px;
+        }
+
+        #re {
+            margin: 20px 0 0 40px;
+
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Age Calculator</h1>
+    <div class="container">
+        <input type="text" placeholder="DATE" id="box1" >
+        <input type="text" placeholder="MONTH" id="box2">
+        <input type="text" placeholder="YEAR" id="box3"><br>
+        <div id="box4" class="boxs">0</div>
+        <div id="box5" class="boxs">0</div>
+        <div id="box6" class="boxs">0</div><br>
+        <button onclick="agecalculate()" id="sub">Submit</button>
+        <button onclick="reset()" id="re">Reset</button>
+    </div>
+
+    <script>
+        let a = document.getElementById('box1');
+        let b = document.getElementById('box2');
+        let c = document.getElementById('box3');
+        let d = document.getElementById('box4');
+        let e = document.getElementById('box5');
+        let f = document.getElementById('box6');
+
+        function agecalculate() {
+            let now = new Date();
+            year = now.getFullYear() - Number(c.value);
+            month = now.getMonth() - Number(b.value);
+            day = now.getDate() - Number(a.value);
+
+            d.innerText = year;
+            e.innerText = month + 1;
+            f.innerText = day;
+        }
+
+        function reset() {
+            a.value = '';
+            b.value = '';
+            c.value = '';
+            d.innerText = '';
+            e.innerText = '';
+            f.innerText = '';
+        }
+
+
+
+
+
+    </script>
+</body>
+
+</html>
